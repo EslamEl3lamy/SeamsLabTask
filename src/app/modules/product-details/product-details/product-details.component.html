@@ -1,0 +1,90 @@
+<div class="row details">
+  <div class="col-md-6 d-m-none">
+    <div class="sectionImage">
+      <div class="d-flex back" [routerLink]="'/'">
+        <mat-icon class="icon">keyboard_backspace</mat-icon>
+        <div class="mx-3 text">back to list</div>
+      </div>
+      <img class="mainImage" [src]="product?.image" alt="">
+    </div>
+  </div>
+  <div class="col-md-6 col-sm-6">
+    <div class="text-center productDeails">
+      <div class="badge">HOTSALE</div>
+      <div class="head">{{product?.title}}</div>
+      <div class="d-flex align-items-center gap-4 ">
+        <div class="name">{{product?.type}}</div>
+        <div>|</div>
+        <div class="rates">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+        <div>|</div>
+        <div class="review">{{product?.rate}} (2130 reviews)</div>
+      </div>
+
+      <div class="description">
+        <div class="header">Description:</div>
+        <ul>
+          <li>{{product?.desc}}</li>
+          <li>Mengandung antioksidan (vitamin E dan selenium) untuk sistem kekebalan tubuh yang sehat.</li>
+          <li>Mengandung serat untuk memperlancar pencernaan dan meningkatkan kesehatan usus.</li>
+          <li>Diperkaya dengan kalsium, fosfor dan vitamin D untuk tulang yang sehat.</li>
+        </ul>
+        <div class="d-flex gap-4">
+          <div class="type selected">
+            <img [src]="product?.image" alt="">
+          </div>
+          <div class="type">
+            <img [src]="product?.image" alt="">
+          </div>
+          <div class="type">
+            <img [src]="product?.image" alt="">
+          </div>
+        </div>
+
+        <div class="header my-3">Size:</div>
+        <div class="d-flex gap-4">
+          <div class="size selected">1 Kg</div>
+          <div class="size">500 gr</div>
+          <div class="size">1.5 Kg</div>
+          <div class="size">250gr</div>
+        </div>
+        <div class="header my-3">Ingrendients:</div>
+        <ul class="fixMargin">
+          <li>Nutrisi</li>
+          <li>Vitamin E</li>
+          <li>Protein</li>
+          <li>Nutrisi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="fixedQuantity">
+    <div class="quantity">
+      <div class="d-flex justify-content-between align-items-center w-100 ">
+        <div class="d-flex align-items-center gap-4 d-m-none">
+          <img [src]="product?.image" alt="">
+          <div class="headName">
+            <div class="name">{{product?.title}}</div>
+            <div class="desc">{{product?.type}}</div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between  ml-auto quan gap-5">
+          <div class="d-flex gap-4 align-items-center mx-2">
+            <div class="name"> Qty:</div>
+            <img src="assets/images/minus-square.png" alt="" (click)="decrease()">
+            <div class="num">
+              {{countProduct}}
+            </div>
+            <img src="assets/images/plus-square.png" alt="" (click)="increase()">
+          </div>
+          <button class="addCard" (click)="addToCart()">ADD TO CARD</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
